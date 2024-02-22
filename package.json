@@ -1,0 +1,32 @@
+{
+  "name": "performa-api",
+  "version": "0.0.1",
+  "description": "Performa API",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build && node app/index.js",
+    "build": "rimraf ./app && tsc",
+    "dev": "npx nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Panit Tuangsuwan",
+  "license": "ISC",
+  "dependencies": {
+    "@koa/cors": "^5.0.0",
+    "koa": "^2.15.0",
+    "koa-bodyparser": "^4.4.1",
+    "koa-router": "^12.0.1",
+    "mongodb": "^6.3.0"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.14.0",
+    "@types/koa__cors": "^5.0.0",
+    "@types/koa-bodyparser": "^4.3.12",
+    "@types/koa-router": "^7.4.8",
+    "@types/node": "^20.11.19",
+    "nodemon": "^3.0.3",
+    "rimraf": "^5.0.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
