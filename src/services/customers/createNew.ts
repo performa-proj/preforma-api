@@ -9,7 +9,7 @@ type ArgsType = {
 };
 
 export const createNew = async (args: ArgsType) => {
-  const { name, mobile, level = 0, creditlimit = 0, creditdays = 0 } = args;
+  const { name, mobile, level = 4, creditlimit = 0, creditdays = 0 } = args;
   const data: any = {
     mobile,
     name,
