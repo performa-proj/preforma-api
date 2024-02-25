@@ -7,11 +7,17 @@ type argsType = {
 export const createNew = async (args: argsType) => {
   const { initialCash } = args;
   const now = new Date();
+
+  const [h, m, s] = now.toLocaleTimeString("en", { hour12: false, hour: "2-digit", minute: "2-digit", second: "2-digit" }).split(":");
+  const code = `${h}${m}${s}`;
+
   const data: any = {
+    code,
     initialCash,
-    transactions: 0,
     status: "OPENED",
+    start: now,
     createdAt: now,
+    updatedAt: now,
   };
 
   const db = await resolveDatabase();
@@ -20,7 +26,10 @@ export const createNew = async (args: argsType) => {
   if (result.insertedId) {
     data._id = result.insertedId;
 
-    return data;
+    return {
+      _id: result.insertedId,
+      ...data,
+    };
   }
 
   return null;

@@ -1,4 +1,5 @@
 import { ObjectId } from "mongodb";
+import { SessionDataType } from "./SessionDataType";
 import { resolveDatabase, COLS_NAME } from "../../data";
 
 type ArgsType = {
@@ -13,7 +14,7 @@ export const getByID = async (args: ArgsType) => {
       _id: new ObjectId(args.id),
     };
 
-    const result = await db.collection(COLS_NAME.SESSIONS).findOne(data);
+    const result = await db.collection<SessionDataType>(COLS_NAME.SESSIONS).findOne(data);
 
     return result;
   } catch (error) {

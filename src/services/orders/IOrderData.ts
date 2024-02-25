@@ -1,4 +1,4 @@
-export interface IOrder {
+export interface IOrderData {
   _id: string;
   sessionID: string;
   level: number;
@@ -23,4 +23,4 @@ export interface IOrder {
     creditline: number;
   };
   createdAt: Date;
-}
+} 

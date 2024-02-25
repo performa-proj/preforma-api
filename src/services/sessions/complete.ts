@@ -1,5 +1,4 @@
 import { resolveDatabase, COLS_NAME } from "../../data";
-import { IOrder } from "../orders/IOrder";
 
 type argsType = {
   sessionID: string;
